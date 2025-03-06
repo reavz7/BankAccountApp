@@ -13,7 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing && (components != null))  
             {
                 components.Dispose();
             }
@@ -32,12 +32,12 @@
             label2 = new Label();
             OwnerTxt = new TextBox();
             AmountNum = new NumericUpDown();
-            aq = new DataGridView();
+            BankAccountsGrid = new DataGridView();
             DepositBtn = new Button();
             WithdrawBtn = new Button();
             CreateAccountBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)AmountNum).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)aq).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)BankAccountsGrid).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -75,13 +75,14 @@
             AmountNum.Size = new Size(182, 23);
             AmountNum.TabIndex = 3;
             // 
-            // aq
+            // BankAccountsGrid
             // 
-            aq.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            aq.Location = new Point(392, 24);
-            aq.Name = "aq";
-            aq.Size = new Size(431, 192);
-            aq.TabIndex = 4;
+            BankAccountsGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            BankAccountsGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            BankAccountsGrid.Location = new Point(392, 24);
+            BankAccountsGrid.Name = "BankAccountsGrid";
+            BankAccountsGrid.Size = new Size(431, 192);
+            BankAccountsGrid.TabIndex = 4;
             // 
             // DepositBtn
             // 
@@ -118,15 +119,15 @@
             Controls.Add(CreateAccountBtn);
             Controls.Add(WithdrawBtn);
             Controls.Add(DepositBtn);
-            Controls.Add(aq);
+            Controls.Add(BankAccountsGrid);
             Controls.Add(AmountNum);
             Controls.Add(OwnerTxt);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "a";
+            Text = "Bank Account";
             ((System.ComponentModel.ISupportInitialize)AmountNum).EndInit();
-            ((System.ComponentModel.ISupportInitialize)aq).EndInit();
+            ((System.ComponentModel.ISupportInitialize)BankAccountsGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -137,7 +138,7 @@
         private Label label2;
         private TextBox OwnerTxt;
         private NumericUpDown AmountNum;
-        private DataGridView aq;
+        private DataGridView BankAccountsGrid;
         private Button DepositBtn;
         private Button WithdrawBtn;
         private Button CreateAccountBtn;
