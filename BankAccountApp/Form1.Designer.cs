@@ -103,7 +103,7 @@
             // 
             // CreateAccountBtn
             // 
-            CreateAccountBtn.Location = new Point(140, 79);
+            CreateAccountBtn.Location = new Point(140, 65);
             CreateAccountBtn.Name = "CreateAccountBtn";
             CreateAccountBtn.Size = new Size(182, 50);
             CreateAccountBtn.TabIndex = 7;
