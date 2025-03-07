@@ -24,17 +24,23 @@ namespace BankAccountApp
 
         private void CreateAccountBtn_Click(object sender, EventArgs e)
         {
-            BankAccount bankAccount = new BankAccount(OwnerTxt.Text);
+        
             if (OwnerTxt.Text == "" || OwnerTxt.Text == null)
             {
                 MessageBox.Show("You have to type owner nickname first.");
+                return;
             }
-            else
+            if (InterestRateNum.Value > 0)
             {
-                BankAccounts.Add(bankAccount);
+                BankAccounts.Add(new SavingsAccount(OwnerTxt.Text, InterestRateNum.Value));
+            }
+            else {
+                BankAccounts.Add(new BankAccount(OwnerTxt.Text));
+            }
+
                 RefreshGrid();
                 OwnerTxt.Clear();
-            }
+                InterestRateNum.Value = 0;
         }
         private void RefreshGrid()
         {
@@ -49,6 +55,7 @@ namespace BankAccountApp
             if (BankAccountsGrid.SelectedRows.Count == 1)
             {
                 BankAccount selectedBankAccount = BankAccountsGrid.SelectedRows[0].DataBoundItem as BankAccount;
+                //Encapsulation in action
                 string message = selectedBankAccount.Deposit(AmountNum.Value);
                 RefreshGrid();
                 AmountNum.Value = 0;

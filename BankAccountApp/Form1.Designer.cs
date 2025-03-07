@@ -36,15 +36,18 @@
             DepositBtn = new Button();
             WithdrawBtn = new Button();
             CreateAccountBtn = new Button();
+            InterestRateNum = new NumericUpDown();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)AmountNum).BeginInit();
             ((System.ComponentModel.ISupportInitialize)BankAccountsGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)InterestRateNum).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(38, 15);
+            label1.Location = new Point(104, 42);
             label1.Name = "label1";
             label1.Size = new Size(85, 30);
             label1.TabIndex = 0;
@@ -55,7 +58,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label2.Location = new Point(40, 215);
+            label2.Location = new Point(80, 228);
             label2.Name = "label2";
             label2.Size = new Size(100, 30);
             label2.TabIndex = 1;
@@ -63,14 +66,14 @@
             // 
             // OwnerTxt
             // 
-            OwnerTxt.Location = new Point(140, 24);
+            OwnerTxt.Location = new Point(229, 51);
             OwnerTxt.Name = "OwnerTxt";
-            OwnerTxt.Size = new Size(182, 23);
+            OwnerTxt.Size = new Size(123, 23);
             OwnerTxt.TabIndex = 2;
             // 
             // AmountNum
             // 
-            AmountNum.Location = new Point(140, 222);
+            AmountNum.Location = new Point(195, 238);
             AmountNum.Maximum = new decimal(new int[] { 99999999, 0, 0, 0 });
             AmountNum.Minimum = new decimal(new int[] { 9999999, 0, 0, int.MinValue });
             AmountNum.Name = "AmountNum";
@@ -108,19 +111,38 @@
             // 
             // CreateAccountBtn
             // 
-            CreateAccountBtn.Location = new Point(140, 65);
+            CreateAccountBtn.Location = new Point(195, 146);
             CreateAccountBtn.Name = "CreateAccountBtn";
-            CreateAccountBtn.Size = new Size(182, 50);
+            CreateAccountBtn.Size = new Size(182, 42);
             CreateAccountBtn.TabIndex = 7;
             CreateAccountBtn.Text = "Create account";
             CreateAccountBtn.UseVisualStyleBackColor = true;
             CreateAccountBtn.Click += CreateAccountBtn_Click;
+            // 
+            // InterestRateNum
+            // 
+            InterestRateNum.Location = new Point(229, 110);
+            InterestRateNum.Name = "InterestRateNum";
+            InterestRateNum.Size = new Size(123, 23);
+            InterestRateNum.TabIndex = 8;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            label3.Location = new Point(32, 103);
+            label3.Name = "label3";
+            label3.Size = new Size(178, 30);
+            label3.TabIndex = 9;
+            label3.Text = "Interest rate (%):";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(845, 302);
+            Controls.Add(label3);
+            Controls.Add(InterestRateNum);
             Controls.Add(CreateAccountBtn);
             Controls.Add(WithdrawBtn);
             Controls.Add(DepositBtn);
@@ -133,6 +155,7 @@
             Text = "Bank Account";
             ((System.ComponentModel.ISupportInitialize)AmountNum).EndInit();
             ((System.ComponentModel.ISupportInitialize)BankAccountsGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)InterestRateNum).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -147,5 +170,7 @@
         private Button DepositBtn;
         private Button WithdrawBtn;
         private Button CreateAccountBtn;
+        private NumericUpDown InterestRateNum;
+        private Label label3;
     }
 }
