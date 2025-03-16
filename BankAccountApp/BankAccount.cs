@@ -34,7 +34,7 @@ namespace BankAccountApp
             Balance += amount;
             return "Deposit completed successfully"; 
         }
-        public virtual string Withdraw(decimal amount) {
+        public string Withdraw(decimal amount) {
             if (amount <= 0)
             {
                 return "You can't withdraw $" + amount;
