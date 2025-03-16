@@ -21,7 +21,21 @@ namespace BankAccountApp
             InterestRate = interestRate;
             //From now, the saving accounts can have a: owner, bankaccount, amount and INTERESTRATE
         }
-            
+
+        public override string Deposit(decimal amount)
+        {
+            if (amount <= 0)    
+            {
+                return "You can't deposit $" + amount;
+            }
+            if (amount > 2000)
+            {
+                return "AML deposit Limit Reached.";
+            }
+            decimal interestAmount = (InterestRate/100) * amount;
+            Balance += amount + interestAmount;
+            return "Deposit completed successfully";
+        }
 
     }
 }
