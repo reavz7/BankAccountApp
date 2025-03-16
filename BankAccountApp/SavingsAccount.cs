@@ -9,7 +9,7 @@ namespace BankAccountApp
     //The savingaccount class is a "child class" and a bankaccount is a "parent class"
     public class SavingsAccount : BankAccount
     {
-        //Inheritance here, from now SavingAccount have acces to all BankAccount class, functions and parameters like owner, bankaccount and amount
+        //Inheritance here, from now SavingAccount have acces to all BankAccount class, functions and parameters like owner, bankaccount and balance
 
         //Now here we are adding InterestRate for SavingAccounts in case user will want to have this type of account and no just
         //a regular bankaccount
